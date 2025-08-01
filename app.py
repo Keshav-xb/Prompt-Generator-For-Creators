@@ -73,14 +73,22 @@ Topic: {topic}
 
 # Footer / Credit
 st.markdown("""
-<hr style="border: none; border-top: 1px solid #ccc; margin-top: 50px;" />
+<hr style="border: none; border-top: 1px solid #555; margin-top: 50px;" />
 
-<div style="text-align: center; font-size: 14px; color: #444;">
-    <p>🚀 Built with <span style="color: red;">❤</span> by <strong>Keshav Sharma</strong></p>
+<div style="text-align: center; font-size: 15px; color: #ccc;">
+    <p>🚀 Made with <span style="color: red;">❤</span> by <strong>Keshav Sharma</strong></p>
     <p>
-        <a href="https://github.com/Keshav-xb" target="_blank" style="text-decoration: none; color: #0e76a8;">GitHub</a> |
-        <a href="mailto:keshavxkh@gmail.com" target="_blank" style="text-decoration: none; color: #0e76a8;">Email</a> |
-        <a href="https://www.linkedin.com/in/keshav-sharma-b15270257" target="_blank" style="text-decoration: none; color: #0e76a8;">LinkedIn</a>
+        <a href="https://github.com/Keshav-xb" target="_blank" style="margin: 0 10px; text-decoration: none;">
+            🐙 GitHub
+        </a>
+        |
+        <a href="mailto:keshavxkh@gmail.com" target="_blank" style="margin: 0 10px; text-decoration: none;">
+            📧 Email
+        </a>
+        |
+        <a href="https://www.linkedin.com/in/keshav-sharma-b15270257" target="_blank" style="margin: 0 10px; text-decoration: none;">
+            🔗 LinkedIn
+        </a>
     </p>
 </div>
 """, unsafe_allow_html=True)
