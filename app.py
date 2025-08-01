@@ -1,32 +1,46 @@
 import streamlit as st
 from io import StringIO
 
-# Title
-st.title("🎯 Prompt Generator for Creators")
+# Page Config
+st.set_page_config(page_title="Prompt Generator", page_icon="✨", layout="centered")
 
-# User input
-topic = st.text_input("📌 Enter your topic (e.g. AI, fitness, motivation, finance):")
+# Hide Streamlit default style
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
-# If topic is entered, generate content
+# Custom Title with Gradient
+st.markdown("""
+<h1 style='text-align: center; font-size: 3em; background: -webkit-linear-gradient(45deg, #ff6ec4, #7873f5); -webkit-background-clip: text; -webkit-text-fill-color: transparent;'>✨ Prompt Generator for Creators</h1>
+""", unsafe_allow_html=True)
+
+# Input Box
+topic = st.text_input("📌 Enter your topic (e.g. AI, fitness, motivation):")
+
 if topic:
     st.markdown("### 📝 Content Prompts")
-    st.write(f"• Future predictions for {topic}")
-    st.write(f"• How does {topic} work behind the scenes?")
-    st.write(f"• Why is everyone suddenly talking about {topic}?")
-    st.write(f"• Common myths about {topic} debunked")
-    st.write(f"• What nobody tells you about {topic}")
+    st.success(f"• Future predictions for {topic}")
+    st.success(f"• How does {topic} work behind the scenes?")
+    st.success(f"• Why is everyone suddenly talking about {topic}?")
+    st.success(f"• Common myths about {topic} debunked")
+    st.success(f"• What nobody tells you about {topic}")
 
     st.markdown("### 🔥 Hook Lines")
-    st.write(f"• {topic} explained simply and clearly.")
-    st.write(f"• Insider scoop: how {topic} actually works.")
-    st.write(f"• Revolutionizing the world – one {topic} at a time.")
-    st.write(f"• This is why {topic} matters more than ever.")
-    st.write(f"• What happens if you ignore {topic}?")
+    st.info(f"• {topic} explained simply and clearly.")
+    st.info(f"• Insider scoop: how {topic} actually works.")
+    st.info(f"• Revolutionizing the world – one {topic} at a time.")
+    st.info(f"• This is why {topic} matters more than ever.")
+    st.info(f"• What happens if you ignore {topic}?")
 
     st.markdown("### 🧠 Hashtags")
-    st.write(f"#ContentCreation #{topic.replace(' ', '')}Tips #GrowWith{topic.title()} #ViralPrompts")
+    st.code(f"#ContentCreation #{topic.replace(' ', '')}Tips #GrowWith{topic.title()} #ViralPrompts", language="markdown")
 
-    # Format all content into a downloadable text
+    # Generate downloadable text
     output = f"""
 📌 PROMPT GENERATOR OUTPUT
 
@@ -50,14 +64,13 @@ Topic: {topic}
 #ContentCreation #{topic.replace(' ', '')}Tips #GrowWith{topic.title()} #ViralPrompts
 """
 
-    # Download button
     st.download_button(
-        label="📩 Download Prompts as .txt",
+        label="📥 Download as .txt",
         data=output,
         file_name="prompts.txt",
         mime="text/plain"
     )
 
-# Footer
+# Footer / Credit
 st.markdown("---")
-st.markdown("Made with ❤️ by [Keshav Sharma](https://github.com/keshavdev01)")
+st.markdown("<p style='text-align: center;'>Built with ❤️ by <a href='https://github.com/keshavdev01' target='_blank'>Keshav Sharma</a></p>", unsafe_allow_html=True)
