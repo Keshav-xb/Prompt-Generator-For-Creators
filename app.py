@@ -73,4 +73,4 @@ Topic: {topic}
 
 # Footer / Credit
 st.markdown("---")
-st.markdown("<p style='text-align: center;'>Built with ❤️ by <a href='https://github.com/keshavdev01' target='_blank'>Keshav Sharma</a></p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Built with ❤️ by <a href=https://github.com/Keshav-xb' target='_blank'>Keshav Sharma</a></p>", unsafe_allow_html=True)
