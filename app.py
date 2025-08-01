@@ -1,44 +1,63 @@
 import streamlit as st
-import random
+from io import StringIO
 
-st.set_page_config(page_title="Prompt Generator", page_icon="✍️", layout="centered")
+# Title
+st.title("🎯 Prompt Generator for Creators")
 
-st.title("🧠 Prompt Generator for Content Creators")
-st.write("Generate high-quality prompts, hook lines, and hashtags based on your topic.")
+# User input
+topic = st.text_input("📌 Enter your topic (e.g. AI, fitness, motivation, finance):")
 
-topic = st.text_input("🔍 Enter your topic:", "")
+# If topic is entered, generate content
+if topic:
+    st.markdown("### 📝 Content Prompts")
+    st.write(f"• Future predictions for {topic}")
+    st.write(f"• How does {topic} work behind the scenes?")
+    st.write(f"• Why is everyone suddenly talking about {topic}?")
+    st.write(f"• Common myths about {topic} debunked")
+    st.write(f"• What nobody tells you about {topic}")
 
-prompt_templates = [
-    "5 powerful lessons about {} you should know",
-    "How to master {} even if you're just starting",
-    "What nobody tells you about {}",
-    "Why {} could change your life in 2025",
-    "I tried {} for 30 days — here's what I learned"
-]
+    st.markdown("### 🔥 Hook Lines")
+    st.write(f"• {topic} explained simply and clearly.")
+    st.write(f"• Insider scoop: how {topic} actually works.")
+    st.write(f"• Revolutionizing the world – one {topic} at a time.")
+    st.write(f"• This is why {topic} matters more than ever.")
+    st.write(f"• What happens if you ignore {topic}?")
 
-hook_templates = [
-    "You're not lazy — you're distracted.",
-    "This one shift will 10x your {} strategy.",
-    "Everyone is talking about {}, but no one is showing this.",
-    "The secret behind viral {} content is simpler than you think."
-]
+    st.markdown("### 🧠 Hashtags")
+    st.write(f"#ContentCreation #{topic.replace(' ', '')}Tips #GrowWith{topic.title()} #ViralPrompts")
 
-hashtag_templates = [
-    "#{}Tips #DailyInspo #{}Talks #LearnWithMe #GrowDaily",
-    "#CreatorMindset #{}Growth #Motivation #HustleHard #RealContent"
-]
+    # Format all content into a downloadable text
+    output = f"""
+📌 PROMPT GENERATOR OUTPUT
 
-if st.button("⚡ Generate Content"):
-    if topic.strip() == "":
-        st.warning("Please enter a topic to generate prompts.")
-    else:
-        st.subheader("🎯 Content Prompts")
-        for _ in range(3):
-            st.write("➤ " + random.choice(prompt_templates).format(topic))
+Topic: {topic}
 
-        st.subheader("📢 Hook Lines")
-        for _ in range(2):
-            st.write("➤ " + random.choice(hook_templates).format(topic))
+📝 Content Prompts:
+- Future predictions for {topic}
+- How does {topic} work behind the scenes?
+- Why is everyone suddenly talking about {topic}?
+- Common myths about {topic} debunked
+- What nobody tells you about {topic}
 
-        st.subheader("📱 Hashtags")
-        st.write(random.choice(hashtag_templates).format(topic, topic))
+🔥 Hook Lines:
+- {topic} explained simply and clearly.
+- Insider scoop: how {topic} actually works.
+- Revolutionizing the world – one {topic} at a time.
+- This is why {topic} matters more than ever.
+- What happens if you ignore {topic}?
+
+🧠 Hashtags:
+#ContentCreation #{topic.replace(' ', '')}Tips #GrowWith{topic.title()} #ViralPrompts
+"""
+
+    # Download button
+    st.download_button(
+        label="📩 Download Prompts as .txt",
+        data=output,
+        file_name="prompts.txt",
+        mime="text/plain"
+    )
+
+# Footer
+st.markdown("---")
+st.markdown("Made with ❤️ by [Keshav Sharma](https://github.com/keshavdev01)")
