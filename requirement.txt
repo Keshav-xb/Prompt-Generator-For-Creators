@@ -1,1 +1,1 @@
-pip install streamlit streamlit-option-menu
+from streamlit_option_menu import option_menu
