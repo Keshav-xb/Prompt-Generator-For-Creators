@@ -52,9 +52,9 @@ A Python-based tool that helps creators instantly generate high-quality content 
 ## 📈 Roadmap
 
 - [x] Basic Python version
-- [ ] Streamlit web app version (coming soon!)
-- [ ] Mobile app integration
-- [ ] Upload to HuggingFace Space
+- [x] Streamlit web app version (coming soon!)
+- [x] Mobile app integration
+- [x] Upload to HuggingFace Space
 
 ---
 
@@ -69,4 +69,4 @@ A Python-based tool that helps creators instantly generate high-quality content 
 
 ## 📄 License
 
-This project is licensed under the
+This project is licensed under the Mit license 
