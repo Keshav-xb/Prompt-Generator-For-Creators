@@ -4,8 +4,7 @@
 A Python-based tool that helps creators instantly generate high-quality content prompts, attention-grabbing hook lines, and trending hashtags based on any topic. Built to assist digital creators, marketers, and influencers in brainstorming ideas when creativity hits a wall.
 
 ## 🔗 Live Demo  
-👉 [Click here to use the Prompt Generator App](https://prompt-generator-for-creators-a9a744nrpsnr2mhxfhc4nm.streamlit.app/)
----
+👉 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://prompt-generator-for-creators-a9a744nrpsnr2mhxfhc4nm.streamlit.app/)
 
 ## 📌 Features
 
